@@ -1,12 +1,16 @@
 ﻿using ProjectsTrackerClient;
-using System.Configuration;
 using ProjectsTrackerClient.Controllers;
 using ProjectsTrackerClient.Interfaces;
 using ProjectsTracker.Controllers;
+using Microsoft.Extensions.Configuration;
 
-string? uriStr = ConfigurationManager.AppSettings["serverURL"];
+var builder = new ConfigurationBuilder()
+                   .AddJsonFile($"appsettings.json", true, true);
+var config = builder.Build();
+string? uriStr = config["Url"];
+
 if (uriStr == null || uriStr == "") {
-    Tools.WriteColor("Plaes add serverURL in the App.config", ConsoleColor.Red);
+    Tools.WriteColor("Plaes write correct server URL in the appsettings.json", ConsoleColor.Red);
     Console.ReadLine();
     return;
 }
