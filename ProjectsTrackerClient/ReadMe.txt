@@ -1,0 +1,1 @@
+﻿Don't forget write server URL in the "App.config" file.

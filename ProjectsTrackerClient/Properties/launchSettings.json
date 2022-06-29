@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProjectsTrackerClient": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
